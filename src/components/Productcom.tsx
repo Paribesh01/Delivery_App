@@ -13,6 +13,7 @@ const ProductComponent: React.FC = () => {
     name: "",
     description: "",
     price: 0,
+    imageurl: "",
   });
 
   useEffect(() => {
@@ -49,7 +50,7 @@ const ProductComponent: React.FC = () => {
         ...prevProducts,
         { ...formData, id: productId },
       ]);
-      setFormData({ name: "", description: "", price: 0 });
+      setFormData({ name: "", description: "", price: 0, imageurl: "" });
     } catch (error) {
       console.error("Error adding product:", error);
     }
@@ -67,6 +68,7 @@ const ProductComponent: React.FC = () => {
           product.id === productId ? { ...product, ...newData } : product
         );
         setProducts(updatedProducts);
+        setFormData({ name: "", description: "", price: 0, imageurl: "" });
       } catch (error) {
         console.error("Error updating product:", error);
       }
@@ -90,14 +92,20 @@ const ProductComponent: React.FC = () => {
 
   return (
     <div>
-      <h2>Product List</h2>
+      <h2 className=" font-black"> Product List</h2>
       <ul>
         {products.map((product) => (
           <li key={product.id}>
             {product.name} - {product.description} - ${product.price}
             <button onClick={() => handleDelete(product.id)}>Delete</button>
             <button
-              onClick={() => handleUpdate(product.id, { name: "Updated Name" })}
+              onClick={() =>
+                handleUpdate(product.id, {
+                  name: formData.name,
+                  description: formData.description,
+                  price: formData.price,
+                })
+              }
             >
               Update
             </button>

@@ -7,6 +7,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
+  imageurl:string;
 }
 
 // Function to add a new product to the Firestore collection
