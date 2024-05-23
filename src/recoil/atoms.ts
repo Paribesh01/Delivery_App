@@ -3,7 +3,13 @@ import { User, Order } from '../db/types';
 
 export const userState = atom<User | null>({
   key: 'userState',
-  default: null
+  default:{
+    email:"nepalparibesh0@gmail.com",
+id:"SiOa9y0hbId7stM05OViNNZ4Bi42",
+name:"Paribesh Nepal",
+orders:[],
+phoneNo:"08115794179"
+  }
 });
 
 export const orderState = atom<Order[]>({

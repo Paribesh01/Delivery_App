@@ -1,4 +1,4 @@
-import { UserAddOrder } from "../../components/user/UserAddOrder";
+import UserAddOrder from "../../components/user/UserAddOrder";
 import { UserSideBar } from "../../components/user/UserSideBar";
 
 export default function AddOrder() {

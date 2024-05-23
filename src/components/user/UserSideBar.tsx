@@ -4,15 +4,10 @@ import {
   List,
   ListItem,
   ListItemPrefix,
-  ListItemSuffix,
-  Chip,
 } from "@material-tailwind/react";
 import {
   PresentationChartBarIcon,
   ShoppingBagIcon,
-  UserCircleIcon,
-  Cog6ToothIcon,
-  InboxIcon,
   PowerIcon,
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
@@ -55,7 +50,7 @@ export function UserSideBar() {
               />
             </svg>
           </ListItemPrefix>
-          <Link to={"/addproduct"}>Add</Link>
+          <Link to={"/add-order"}>Add</Link>
         </ListItem>
 
         <ListItem>

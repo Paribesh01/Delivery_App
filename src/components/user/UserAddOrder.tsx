@@ -1,11 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useOrder } from "../../hooks/useOrder";
-import { Order } from "../../db/types";
+import { useRecoilValue } from "recoil";
 
-export function UserAddOrder() {
+import { Order } from "../../db/types";
+import { userState } from "../../recoil/atoms";
+import { useOrder } from "../../hooks/useOrder";
+
+const UserAddOrder: React.FC = () => {
   const navigate = useNavigate();
   const { addOrder } = useOrder();
+  const user = useRecoilValue(userState);
   const [formData, setFormData] = useState<Omit<Order, "id" | "userId">>({
     pickupLocation: "",
     dropoffLocation: "",
@@ -26,15 +30,19 @@ export function UserAddOrder() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const userId = "user-id-placeholder"; // Replace this with actual user ID from context or state
-      await addOrder(userId, formData);
+      if (!user) {
+        throw new Error("User not logged in");
+      }
+      const userId = user.id;
+      const addedOrder = await addOrder(userId, formData);
+      console.log("Order added:", addedOrder);
       setFormData({
         pickupLocation: "",
         dropoffLocation: "",
         receiverPhoneNo: "",
         status: "pending",
       });
-      navigate("/orders"); // Adjust the route as needed
+      navigate("/ecommerce"); // Adjust the route as needed
     } catch (error) {
       console.error("Error adding order:", error);
     }
@@ -78,4 +86,6 @@ export function UserAddOrder() {
       </form>
     </div>
   );
-}
+};
+
+export default UserAddOrder;
