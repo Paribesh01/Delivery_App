@@ -8,9 +8,9 @@ import About from "./routes/home/About";
 import Contact from "./routes/home/Contact";
 import Signup from "./routes/Auth/Signup";
 import Login from "./routes/Auth/Login";
-import UserDashborad from "./routes/userDashboard/UserDashboard";
 import AddOrder from "./routes/userDashboard/AddOrder";
-import UserEcommerce from "./routes/userDashboard/UserEcommerce";
+import UserDashBoard from "./routes/userDashboard/UserDashboard";
+import { DashBoard } from "./routes/Admin/Dashboard";
 // import { DashBoard } from "./routes/Admin/Dashboard";
 // import { Ecommerce } from "./routes/Admin/Ecommerce";
 // import { Add } from "./routes/Admin/Add";
@@ -23,9 +23,12 @@ export const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/dashboard" element={<UserDashborad />} />
+
       <Route path="/add-order" element={<AddOrder />} />
-      <Route path="/ecommerce" element={<UserEcommerce />} />
+      <Route path="/dashboard" element={<UserDashBoard />} />
+
+      {/* <Route path="/admin/" element={<DashBoard />} /> */}
+      <Route path="/admin/dashboard" element={<DashBoard />} />
     </>
   )
 );

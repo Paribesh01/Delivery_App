@@ -1,12 +1,15 @@
-import { SideBar } from "../../components/Admin/SideBar";
+import { UserOrderTable } from "../../components/user/UserOrderTable";
+import { UserSideBar } from "../../components/user/UserSideBar";
 
-export default function UserDashborad() {
+export default function UserDashBoard() {
   return (
     <>
       <div className=" flex h-screen overflow-hidden">
-        <SideBar />
+        <UserSideBar />
 
-        <div className=" w-screen flex justify-center align-middle "></div>
+        <div className=" w-screen flex justify-center align-middle ">
+          <UserOrderTable />
+        </div>
       </div>
     </>
   );

@@ -2,8 +2,8 @@ import { useRecoilState } from 'recoil';
 // import { useEffect } from 'react';
 import { db } from '../db/firebase';
 import { orderState } from '../recoil/atoms';
-import { Order } from '../db/types';
-import { doc, runTransaction, arrayUnion, getDocs, where, collection, query } from 'firebase/firestore';
+import { Order, User } from '../db/types';
+import { doc, runTransaction, arrayUnion, getDocs, where, collection, query, getDoc } from 'firebase/firestore';
 
 export const useOrder = () => {
   const [orders, setOrders] = useRecoilState(orderState);
@@ -52,5 +52,26 @@ export const useOrder = () => {
     }
   };
 
-  return { orders, addOrder, getUserOrders };
+  const getAllOrders = async (): Promise<void> => {
+    const q = query(collection(db, 'orders'));
+
+    try {
+      const querySnapshot = await getDocs(q);
+      const allOrders: Order[] = [];
+      for (const docSnap of querySnapshot.docs) {
+        const orderData = docSnap.data() as Order;
+        const userRef = doc(db, 'users', orderData.userId);
+        const userDoc = await getDoc(userRef);
+        const userData = userDoc.exists() ? (userDoc.data() as User) : null;
+
+        allOrders.push({ ...orderData, user: userData });
+      }
+
+      setOrders(allOrders);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return { orders, addOrder, getUserOrders, getAllOrders };
 };

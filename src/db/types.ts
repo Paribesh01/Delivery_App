@@ -5,6 +5,7 @@ export interface Order {
     dropoffLocation: string;
     receiverPhoneNo: string;
     status: 'pending' | 'in-progress' | 'completed' | 'cancelled';
+    user?: User | null;
   }
   
   export interface User {
