@@ -92,7 +92,7 @@ export function AddProduct() {
           <Input
             name="imageurl"
             size="lg"
-            placeholder="Price"
+            placeholder="ImageUrl"
             onChange={handleInputChange}
             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
             labelProps={{

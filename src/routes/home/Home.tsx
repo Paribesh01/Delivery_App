@@ -1,5 +1,7 @@
-import ProductComponent from "../../components/Productcom";
-
 export function Home() {
-  return <ProductComponent />;
+  return (
+    <>
+      <h1>Home</h1>
+    </>
+  );
 }
