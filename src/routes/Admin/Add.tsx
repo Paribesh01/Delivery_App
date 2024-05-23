@@ -1,5 +1,5 @@
-import { AddProduct } from "../../components/AddProduct";
-import { SideBar } from "../../components/SideBar";
+import { AddProduct } from "../../components/Admin/AddProduct";
+import { SideBar } from "../../components/Admin/SideBar";
 
 export function Add() {
   return (

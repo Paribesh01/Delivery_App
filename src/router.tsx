@@ -8,6 +8,8 @@ import About from "./routes/home/About";
 import Contact from "./routes/home/Contact";
 import Signup from "./routes/Auth/Signup";
 import Login from "./routes/Auth/Login";
+import UserDashborad from "./routes/userDashboard/UserDashboard";
+import AddOrder from "./routes/userDashboard/AddOrder";
 // import { DashBoard } from "./routes/Admin/Dashboard";
 // import { Ecommerce } from "./routes/Admin/Ecommerce";
 // import { Add } from "./routes/Admin/Add";
@@ -20,9 +22,9 @@ export const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      {/* <Route path="/dashboard" element={<DashBoard />} />
-      <Route path="/ecommerce" element={<Ecommerce />} />
-      <Route path="/addproduct" element={<Add />} /> */}
+      <Route path="/dashboard" element={<UserDashborad />} />
+      <Route path="/addproduct" element={<AddOrder />} />
+      {/* <Route path="/ecommerce" element={<Ecommerce />} /> */}
     </>
   )
 );

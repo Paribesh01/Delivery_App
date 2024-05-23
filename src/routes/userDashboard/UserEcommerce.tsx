@@ -1,7 +1,6 @@
-import { ProductsTable } from "../../components/Admin/ProductsTable";
 import { SideBar } from "../../components/Admin/SideBar";
 
-export function Ecommerce() {
+export default function UserEcommerce() {
   return (
     <>
       <div className=" flex h-screen overflow-hidden">

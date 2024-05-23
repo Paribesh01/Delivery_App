@@ -16,7 +16,11 @@ import {
   Tooltip,
   Input,
 } from "@material-tailwind/react";
-import { Product, getAllProducts, deleteProduct } from "../db/productService";
+import {
+  Product,
+  getAllProducts,
+  deleteProduct,
+} from "../../db/productService";
 import { useEffect, useState } from "react";
 
 const TABLE_HEAD = ["S.N", "Photo", "Name", "Description", "Price", ""];

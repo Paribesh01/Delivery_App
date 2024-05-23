@@ -6,7 +6,7 @@ import {
   Typography,
   Textarea,
 } from "@material-tailwind/react";
-import { Product, addProduct } from "../db/productService";
+import { Product, addProduct } from "../../db/productService";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

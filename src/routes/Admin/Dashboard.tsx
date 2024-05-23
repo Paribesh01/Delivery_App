@@ -4,7 +4,7 @@ import {
   deleteProduct,
   getAllProducts,
 } from "../../db/productService";
-import { SideBar } from "../../components/SideBar";
+import { SideBar } from "../../components/Admin/SideBar";
 
 export function DashBoard() {
   const [products, setProducts] = useState<Product[]>([]);
