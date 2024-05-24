@@ -8,14 +8,13 @@ import Navbar from "../../components/Navbar";
 import FooterWithSocialLinks from "../../components/Footer";
 
 const Login: React.FC = () => {
-  const user = useRecoilValue(userState);
-
   const { loginUser } = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
+  const user = useRecoilValue(userState);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {

@@ -42,7 +42,7 @@ const UserAddOrder: React.FC = () => {
         receiverPhoneNo: "",
         status: "pending",
       });
-      navigate("/ecommerce"); // Adjust the route as needed
+      navigate("/dashboard"); // Adjust the route as needed
     } catch (error) {
       console.error("Error adding order:", error);
     }
