@@ -8,7 +8,7 @@ import { MdDirectionsBoat } from "react-icons/md";
 import { FaWarehouse } from "react-icons/fa";
 import { FaTruck } from "react-icons/fa";
 import { FaFacebook,FaInstagram,FaTwitter } from "react-icons/fa";
-import PageNotFound from "../../components/PageNotFound";
+// import PageNotFound from "../../components/PageNotFound";
 
 
 export default function About() {
@@ -117,7 +117,7 @@ export default function About() {
   </div>
 </div> 
 
-<PageNotFound />
+{/* <PageNotFound /> */}
 
       <GetStarted />
       <FooterWithSocialLinks />
