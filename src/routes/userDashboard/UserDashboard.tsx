@@ -3,14 +3,16 @@ import { UserSideBar } from "../../components/user/UserSideBar";
 
 export default function UserDashBoard() {
   return (
-    <>
-      <div className=" flex h-screen overflow-hidden">
-        <UserSideBar />
+    <div>
 
-        <div className=" w-screen flex justify-center align-middle ">
+      <div className=" flex gap-10 h-screen overflow-hidden bg-slate-100">
+        <UserSideBar />
+        <div className=" flex justify-center items-center">
           <UserOrderTable />
         </div>
+
       </div>
-    </>
+
+    </div>
   );
 }

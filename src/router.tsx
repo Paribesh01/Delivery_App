@@ -39,9 +39,9 @@ export const router = (
     <Route
       path="/admin/dashboard"
       element={
-        <AdminProtectedRoute>
+        // <AdminProtectedRoute>
           <DashBoard />
-        </AdminProtectedRoute>
+        // </AdminProtectedRoute>
       }
     />
     <Route path="*" element={<NotFoundPage />}></Route>

@@ -28,31 +28,6 @@ const Login: React.FC = () => {
   };
 
   return (
-    // <div>
-    //   <h2>Login</h2>
-    //   {error && <p style={{ color: "red" }}>{error}</p>}
-    //   <form onSubmit={handleSubmit}>
-    //     <div>
-    //       <label htmlFor="email">Email:</label>
-    //       <input
-    //         type="email"
-    //         id="email"
-    //         value={email}
-    //         onChange={(e) => setEmail(e.target.value)}
-    //       />
-    //     </div>
-    //     <div>
-    //       <label htmlFor="password">Password:</label>
-    //       <input
-    //         type="password"
-    //         id="password"
-    //         value={password}
-    //         onChange={(e) => setPassword(e.target.value)}
-    //       />
-    //     </div>
-    //     <button type="submit">Login</button>
-    //   </form>
-    // </div>
     <>
       <Navbar />
       <section className="bg-gray-50 dark:bg-gray-900">
